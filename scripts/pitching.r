@@ -9,7 +9,7 @@ summary(pitching)
 ggplot(data = pitching, aes(x = W)) +
   geom_histogram(binwidth = 5, fill = "azure4", color = "white") +
   labs(
-    title = "Distribution of 2025 Team Wins",
+    title = "Distribution of 2025 MLB Team Wins",
     x = "Wins",
     y = "Number of Teams") +
   theme_minimal()
