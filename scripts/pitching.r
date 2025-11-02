@@ -15,14 +15,14 @@ ggplot(data = pitching, aes(x = W)) +
     y = "Number of Teams") +
   theme_minimal()
 
-  # scatter plot of wins versus team ERA
-  ggplot(data = pitching, aes(x = ERA, y = W)) + 
-    geom_point(color = "azure4", alpha = 0.7) +
-    geom_smooth(method = "lm", color = "red") + 
-    labs(
-    title = "Team ERA vs. Wins", 
-    x = "Team ERA", 
-    y = "Number of Wins")
+# scatter plot of wins versus team ERA
+ggplot(data = pitching, aes(x = ERA, y = W)) + 
+  geom_point(color = "azure4", alpha = 0.7) +
+  geom_smooth(method = "lm", color = "red") + 
+  labs(
+  title = "Team ERA vs. Wins", 
+  x = "Team ERA", 
+  y = "Number of Wins")
 
-  # determine correlation between team ERA and wins
-  round(cor(pitching$W, pitching$ERA, use="complete.obs"), 2)
+# determine correlation between team ERA and wins
+round(cor(pitching$W, pitching$ERA, use="complete.obs"), 2)
