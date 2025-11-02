@@ -17,3 +17,14 @@ ggplot(data = fielding, aes(x = Fld., y = RA.G)) +
 
 # correlation between fielding and runs allowed, use of . in place of / and % to fix errors
 round(cor(fielding$RA.G, fielding$Fld., use="complete.obs"), 2)
+
+# graphing teams by defensive efficiency
+ggplot(fielding, aes(x = DefEff, y = reorder(Team, DefEff))) +
+  geom_bar(stat = "identity", fill = "azure4") +
+  coord_cartesian(xlim = c(0.64, 0.725)) +
+  labs(
+    title = "2025 Team Defensive Efficiency",
+    x = "Defensive Efficiency",
+    y = "Team"
+  ) +
+  theme_minimal()

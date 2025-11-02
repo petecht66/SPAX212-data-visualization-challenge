@@ -6,8 +6,8 @@ batting <- read.csv("https://raw.githubusercontent.com/petecht66/SPAX212-data-vi
 summary(batting)
 head(batting)
 
-# create a model to evaluate which hitting metrics are important for wins
-battingModel <- lm(W ~ HR + BA + SLG + OBP, data = batting)
+# create a model to evaluate which hitting metrics are important for runs scored
+battingModel <- lm(R ~ BA + SLG + OBP, data = batting)
 summary(battingModel)
 
 # create a model to evaluate importance of baserunning for runs scored
