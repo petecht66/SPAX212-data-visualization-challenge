@@ -4,6 +4,7 @@ library(ggplot2)
 # creating pitching data frame
 pitching <- read.csv("https://raw.githubusercontent.com/petecht66/SPAX212-data-visualization-challenge/refs/heads/main/data/PitchingData.csv")
 summary(pitching)
+head(pitching)
 
 # manufacturing wins histogram
 ggplot(data = pitching, aes(x = W)) +
@@ -18,5 +19,10 @@ ggplot(data = pitching, aes(x = W)) +
   ggplot(data = pitching, aes(x = ERA, y = W)) + 
     geom_point(color = "azure4", alpha = 0.7) +
     geom_smooth(method = "lm", color = "red") + 
-    labs(title = "Team ERA vs. Wins", 
-    x = "Team ERA", y = "Number of Wins")
+    labs(
+    title = "Team ERA vs. Wins", 
+    x = "Team ERA", 
+    y = "Number of Wins")
+
+  # determine correlation between team ERA and wins
+  round(cor(pitching$W, pitching$ERA, use="complete.obs"), 2)
